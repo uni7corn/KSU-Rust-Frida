@@ -654,7 +654,7 @@ su -c "kfm start"
 如果确实需要开机自启（自行承担风险），可修改 `service.sh`：
 
 ```sh
-# ⚠️ 不推荐 — 如果 rustfrida 出问题会卡 logo
+# 不推荐 — 如果 rustfrida 出问题会卡 logo
 (sleep 60 && /data/adb/ksu/bin/kfm start) &
 ```
 
@@ -668,15 +668,6 @@ KSUhook/
 ├── run.sh                    # 注入目标 App (attach / spawn / 后台)
 │
 ├── hook.js                   # 通用 SSL Pinning 解钉 (Conscrypt/OkHttp/WebView...)
-├── hook2.js                  # TikTok 抓包 (native Cronet/mssdk hook)
-├── hook_keeta_capture.js     # Keeta mtgsig 抓取 (本仓库重点)
-├── scripts/
-│   ├── qbdi.js               # Qbdi 高层封装: 读写寄存器/内存 + QBDI Trace
-│   ├── bypass_and_modify.js  # Tier1 实战: 任意地址读写寄存器/内存篡改 (自包含)
-│   ├── qbdi_trace.js         # QBDI 指令级 Trace 模板 (需 --qbdi 构建)
-│   ├── grab_all.js           # Grab 更新绕过 + SSL + 网络监控 (规范写法范例)
-│   ├── grab1.js / grab2.js   # Grab 更新绕过 / SSL 解钉
-│   └── Trip.js               # Trip.com SSL 解钉
 ├── tools/
 │   └── trace_decode.py       # QBDI trace_bundle.pb 离线解码器 (零依赖, capstone 可选反汇编)
 │
